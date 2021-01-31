@@ -1,6 +1,5 @@
-program: 
-  - run.py
-  - train.py
+program: run.py
+#train.py
 method: grid
 command:
   - ${env}
