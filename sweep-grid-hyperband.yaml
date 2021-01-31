@@ -1,0 +1,19 @@
+program: run.py
+method: grid
+metric:
+  name: loss
+  goal: minimize
+parameters:
+  batch_size:
+    values: [256, 128, 64, 32]
+  lr_model:
+    values: [1e-2, 1e-3, 1e-4, 3e-4, 3e-5, 1e-5]
+  lr_critic:
+    values: [1e-2, 1e-3, 1e-4, 3e-4, 3e-5, 1e-5]
+  lr_decay:
+    values: [0.9, 0.95, 1.0, 1.05, 1.1, 1.15]
+early_terminate:
+  type: hyperband
+  s: 2
+  eta: 3
+  max_iter: 27
