@@ -218,8 +218,8 @@ def run(opts):
                 problem,
                 tb_logger,
                 opts,
-                start_time,
-                config
+                config,
+                start_time
             )
             train_run.append(avg_time)
             for hr in opts.save_hrs:
