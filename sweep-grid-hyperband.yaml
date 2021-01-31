@@ -1,5 +1,12 @@
-program: run.py
+program: 
+  - run.py
+  - train.py
 method: grid
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
 metric:
   name: loss
   goal: minimize
