@@ -153,7 +153,7 @@ def train_batch(
 
     # save log for wandb
     metrics = {'loss': loss}
-    wandb.log({metrics)
+    wandb.log(metrics)
 
     # Perform backward pass and optimization step
     optimizer.zero_grad()
