@@ -80,6 +80,7 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
 
     # Put model in train mode!
     # ??? wandb
+    wandb.watch(model)
     model.train()
     set_decode_type(model, "sampling")
     for batch_id, batch in enumerate(tqdm(training_dataloader, disable=opts.no_progress_bar)):
@@ -98,6 +99,7 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
 
         step += 1
 
+
     epoch_duration = time.time() - start_time
     print("Finished epoch {}, took {} s".format(epoch, time.strftime('%H:%M:%S', time.gmtime(epoch_duration))))
 
@@ -113,6 +115,8 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
             },
             os.path.join(opts.save_dir, 'epoch-{}.pt'.format(epoch))
         )
+        # Save model to wandb
+        torch.save(model.state_dict(), os.path.join(wandb.run.dir, 'model.pt'))
 
     avg_reward = validate(model, val_dataset, opts)
 
@@ -151,10 +155,6 @@ def train_batch(
     reinforce_loss = ((cost - bl_val) * log_likelihood).mean()
     loss = reinforce_loss + bl_loss
 
-    # save log for wandb
-    metrics = {'loss': loss}
-    wandb.log(metrics)
-
     # Perform backward pass and optimization step
     optimizer.zero_grad()
     loss.backward()
@@ -166,3 +166,8 @@ def train_batch(
     if step % int(opts.log_step) == 0:
         log_values(cost, grad_norms, epoch, batch_id, step,
                    log_likelihood, reinforce_loss, bl_loss, tb_logger, opts)
+
+    # Logging: save log for wandb
+    if batch_id == 0:
+        metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss}
+        wandb.log(metrics)
