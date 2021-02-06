@@ -79,9 +79,9 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
     training_dataloader = DataLoader(training_dataset, batch_size=config.batch_size, num_workers=1)
 
     # Put model in train mode!
+    # ??? wandb
     model.train()
     set_decode_type(model, "sampling")
-
     for batch_id, batch in enumerate(tqdm(training_dataloader, disable=opts.no_progress_bar)):
 
         train_batch(
