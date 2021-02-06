@@ -207,6 +207,8 @@ def run(opts):
     if opts.eval_only:
         validate(model, val_dataset, opts)
     else:
+        # watch each model
+        wandb.watch(model)
         for epoch in range(opts.epoch_start, opts.epoch_start + opts.n_epochs):
             avg_time = train_epoch(
                 model,
