@@ -79,7 +79,6 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
     training_dataloader = DataLoader(training_dataset, batch_size=config.batch_size, num_workers=1)
 
     # Put model in train mode!
-    # ??? wandb
     model.train()
     set_decode_type(model, "sampling")
     for batch_id, batch in enumerate(tqdm(training_dataloader, disable=opts.no_progress_bar)):
@@ -168,5 +167,7 @@ def train_batch(
 
     # Logging: save log for wandb
     if batch_id == 0:
-        metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss}
+        # ??? check if the value of loss would change after conduct backward()
+        # ??? check how the x axis come from: use this? wandb.log({"epoch": epoch, "loss": loss}, step=epoch)
+        metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss, 'loss':loss}
         wandb.log(metrics)

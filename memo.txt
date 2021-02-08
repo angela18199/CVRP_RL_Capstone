@@ -13,3 +13,7 @@ lr_decay: 0.94, 0.96, 0.98, 1.0(default)
 n_epochs: 100(default)
 seed: 100(default)
 baseline: None(default), 'rollout', 'critic' or 'exponential'
+
+
+
+*Set some hyper parameters which do not involve in hyper parameter search in order to record and show it on W&B.

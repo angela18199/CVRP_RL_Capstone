@@ -229,6 +229,8 @@ def run(opts):
                     opts.save_hrs.remove(hr)
                     print('Saving model and state...')
                     hr_time = int(round((time()-start_time)/3600))
+                    # ??? need to change the path to the right directory
+                    # ??? get the average distance here and send it to W&B use this? wandb.log({"epoch": epoch, "loss": loss}, step=hr)
                     with open('../models/att/hist_{}_{}hr.pickle'.format(run_name,hr_time), 'wb') as handle:
                                 pickle.dump(train_run, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     torch.save(
