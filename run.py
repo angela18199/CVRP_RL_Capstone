@@ -231,7 +231,7 @@ def run(opts):
                     hr_time = int(round((time()-start_time)/3600))
                     # ??? need to change the path to the right directory
                     # ??? get the average distance here and send it to W&B use this? wandb.log({"epoch": epoch, "loss": loss}, step=hr)
-                    with open('../models/att/hist_{}_{}hr.pickle'.format(run_name,hr_time), 'wb') as handle:
+                    with open('models/hist_{}_{}hr.pickle'.format(run_name,hr_time), 'wb') as handle:
                                 pickle.dump(train_run, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     torch.save(
                         {
@@ -241,8 +241,8 @@ def run(opts):
                             'cuda_rng_state': torch.cuda.get_rng_state_all(),
                             'baseline': baseline.state_dict()
                         },
-                        os.path.join('../models/att', '{}_{}hr-model-att-only.pt'.format(run_name,hr_time))
+                        os.path.join('models', '{}_{}hr-model-att-only.pt'.format(run_name,hr_time))
                         )
-                    torch.save(model, os.path.join('../models/att', '{}_{}hr-model.pt'.format(run_name,hr_time)))
+                    torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
 if __name__ == "__main__":
     run(get_options())
