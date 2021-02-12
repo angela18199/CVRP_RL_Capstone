@@ -250,7 +250,7 @@ def run(opts):
                     att = pickle.load( open( 'models/hist_{}_{}hr.pickle'.format(run_name,hr_time), "rb" ) )
                     time, avg = process(att)
                     metrics = {'hr': time[-1],'Average Distance': avg[-1]}
-                    wandb.log(metrics)
+                    wandb.log(metrics, step = time[-1])
 
 
 

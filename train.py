@@ -158,7 +158,7 @@ def train_batch(
         # ??? check if the value of loss would change after conduct backward()
         # ??? check how the x axis come from: use this? wandb.log({"epoch": epoch, "loss": loss}, step=epoch)
         metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss, 'loss':loss}
-        wandb.log(metrics)
+        wandb.log(metrics, step = epoch)
 
     # Perform backward pass and optimization step
     optimizer.zero_grad()
