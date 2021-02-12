@@ -250,7 +250,7 @@ def run(opts):
                     """att = pickle.load( open( 'models/hist_{}_{}hr.pickle'.format(run_name,hr_time), "rb" ) )
                     train_time, train_avg = process(att)
                     metrics = {'hr': train_time[-1],'Average Distance': train_avg[-1]}
-                    wandb.log(metrics, step = train_time[-1])"""
+                    wandb.log(metrics, step = train_time[-1])
 
 
 
@@ -269,7 +269,7 @@ def process(*lists):
             time += [t+time0 for t in lst[1]]
         avg += list(lst[0])
         time0 = time[-1]
-    return [time, avg]
+    return [time, avg]"""
 
 if __name__ == "__main__":
     run(get_options())
