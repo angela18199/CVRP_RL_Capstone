@@ -153,13 +153,6 @@ def train_batch(
     reinforce_loss = ((cost - bl_val) * log_likelihood).mean()
     loss = reinforce_loss + bl_loss
 
-    # Logging: save log for wandb
-    if batch_id == 0:
-        # ??? check if the value of loss would change after conduct backward()
-        # ??? check how the x axis come from: use this? wandb.log({"epoch": epoch, "loss": loss}, step=epoch)
-        metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss, 'loss':loss}
-        wandb.log(metrics, step = epoch)
-
     # Perform backward pass and optimization step
     optimizer.zero_grad()
     loss.backward()
@@ -172,3 +165,9 @@ def train_batch(
         log_values(cost, grad_norms, epoch, batch_id, step,
                    log_likelihood, reinforce_loss, bl_loss, tb_logger, opts)
 
+    # Logging: save log for wandb
+    if batch_id == 0:
+        # ??? check if the value of loss would change after conduct backward()
+        # ??? check how the x axis come from: use this? wandb.log({"epoch": epoch, "loss": loss}, step=epoch)
+        metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss, 'loss':loss}
+        wandb.log(metrics)

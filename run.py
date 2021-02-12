@@ -26,9 +26,6 @@ import torch.nn as nn
 import wandb
 from torchvision import datasets, transforms
 
-import numpy as np
-
-
 def run(opts):
     # start time
     start_time = time()
@@ -232,6 +229,8 @@ def run(opts):
                     opts.save_hrs.remove(hr)
                     print('Saving model and state...')
                     hr_time = int(round((time()-start_time)/3600))
+                    # ??? need to change the path to the right directory
+                    # ??? get the average distance here and send it to W&B use this? wandb.log({"epoch": epoch, "loss": loss}, step=hr)
                     with open('models/hist_{}_{}hr.pickle'.format(run_name,hr_time), 'wb') as handle:
                                 pickle.dump(train_run, handle, protocol=pickle.HIGHEST_PROTOCOL)
                     torch.save(
@@ -245,31 +244,5 @@ def run(opts):
                         os.path.join('models', '{}_{}hr-model-att-only.pt'.format(run_name,hr_time))
                         )
                     torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
-
-                    # ??? get the average distance here and send it to W&B use this?
-                    """att = pickle.load( open( 'models/hist_{}_{}hr.pickle'.format(run_name,hr_time), "rb" ) )
-                    train_time, train_avg = process(att)
-                    metrics = {'hr': train_time[-1],'Average Distance': train_avg[-1]}
-                    wandb.log(metrics, step = train_time[-1])
-
-
-
-def unzip_it(zipped):
-    return list(zip(*list(zipped)))
-
-def process(*lists):
-    time = []
-    avg = []
-    time0 = 0
-    for lst in lists:
-        lst = unzip_it(lst)
-        if lst[1][-1] > 20:
-            time += [t/3600+time0 for t in lst[1]]
-        else:
-            time += [t+time0 for t in lst[1]]
-        avg += list(lst[0])
-        time0 = time[-1]
-    return [time, avg]"""
-
 if __name__ == "__main__":
     run(get_options())
