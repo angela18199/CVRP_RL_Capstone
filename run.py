@@ -247,10 +247,10 @@ def run(opts):
                     torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
 
                     # ??? get the average distance here and send it to W&B use this?
-                    att = pickle.load( open( 'models/hist_{}_{}hr.pickle'.format(run_name,hr_time), "rb" ) )
+                    """att = pickle.load( open( 'models/hist_{}_{}hr.pickle'.format(run_name,hr_time), "rb" ) )
                     train_time, train_avg = process(att)
                     metrics = {'hr': train_time[-1],'Average Distance': train_avg[-1]}
-                    wandb.log(metrics, step = train_time[-1])
+                    wandb.log(metrics, step = train_time[-1])"""
 
 
 
