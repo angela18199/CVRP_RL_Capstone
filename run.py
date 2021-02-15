@@ -245,9 +245,6 @@ def run(opts):
                     torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
 
                     # save model and check points for wandb
-                    # "model.h5" is saved in wandb.run.dir & will be uploaded at the end of training
-                    model.save(os.path.join(wandb.run.dir, '{}_{}hr-model.h5'.format(run_name,hr_time)))
-
                     # Save a model file manually from the current directory:
                     wandb.save('{}_{}hr-model.h5'.format(run_name,hr_time))
 
@@ -256,6 +253,6 @@ def run(opts):
 
                     # Save any files starting with "checkpoint" as they're written to:
                     wandb.save(os.path.join(wandb.run.dir, "checkpoint*"))
-                    
+
 if __name__ == "__main__":
     run(get_options())
