@@ -245,6 +245,9 @@ def run(opts):
                     torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
 
                     # save model and check points for wandb
+                    wandb.save('*.pth')
+
+                    """
                     # Save a model file manually from the current directory:
                     wandb.save('{}_{}hr-model.h5'.format(run_name,hr_time))
 
@@ -253,6 +256,7 @@ def run(opts):
 
                     # Save any files starting with "checkpoint" as they're written to:
                     wandb.save(os.path.join(wandb.run.dir, "checkpoint*"))
+                    """
 
 if __name__ == "__main__":
     run(get_options())
