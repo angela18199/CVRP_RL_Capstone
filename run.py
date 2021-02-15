@@ -249,7 +249,7 @@ def run(opts):
                     wandb.save('{}_{}hr-model.h5'.format(run_name,hr_time))
 
                     # Save all files that currently exist containing the substring "ckpt":
-                    wandb.save('../logs/*ckpt*')
+                    wandb.save('logs/*ckpt*')
 
                     # Save any files starting with "checkpoint" as they're written to:
                     wandb.save(os.path.join(wandb.run.dir, "checkpoint*"))
