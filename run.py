@@ -247,9 +247,11 @@ def run(opts):
 
                     # save model and check points for wandb
                     wandb.save('*.pth')
+                    # wandb: WARNING Symlinked 0 file into the W&B run directory, call wandb.save again to sync new files.
 
                     # Save a model file manually from the current directory:
-                    wandb.save('{}_{}hr-model.h5'.format(run_name,hr_time))
+                    wandb.save('/models/{}_{}hr-model.h5'.format(run_name,hr_time), base_path="/models")
+                    #wandb: WARNING Saving files without folders. If you want to preserve sub directories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
 
                     """
                     # Save all files that currently exist containing the substring "ckpt":
