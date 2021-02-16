@@ -245,6 +245,7 @@ def run(opts):
                         )
                     torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
 
+                    """
                     # ??? save model and check points for wandb
                     # none of the following works....
                     wandb.save('*.pth')
@@ -254,13 +255,14 @@ def run(opts):
                     wandb.save('/models/{}_{}hr-model.h5'.format(run_name,hr_time), base_path="/models")
                     #wandb: WARNING Saving files without folders. If you want to preserve sub directories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
 
-                    """
+                    
                     # Save all files that currently exist containing the substring "ckpt":
-                    wandb.save('logs/*ckpt*')"""
+                    wandb.save('logs/*ckpt*')
 
                     # Save any files starting with "checkpoint" as they're written to:
                     wandb.save(os.path.join(wandb.run.dir, "checkpoint*"))
                     # wandb: WARNING Symlinked 0 file into the W&B run directory, call wandb.save again to sync new files.
+                    """
         
         wandb.save('model.h5')
 
