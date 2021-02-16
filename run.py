@@ -225,7 +225,7 @@ def run(opts):
             )
             train_run.append(avg_time)
             for hr in opts.save_hrs:
-                #if (time() - start_time) > hr*3600:
+                #??? if (time() - start_time) > hr*3600:
                 if (time() - start_time) > hr:
                     opts.save_hrs.remove(hr)
                     print('Saving model and state...')
@@ -245,7 +245,8 @@ def run(opts):
                         )
                     torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
 
-                    # save model and check points for wandb
+                    # ??? save model and check points for wandb
+                    # none of the following works....
                     wandb.save('*.pth')
                     # wandb: WARNING Symlinked 0 file into the W&B run directory, call wandb.save again to sync new files.
 
@@ -259,7 +260,9 @@ def run(opts):
 
                     # Save any files starting with "checkpoint" as they're written to:
                     wandb.save(os.path.join(wandb.run.dir, "checkpoint*"))
-                    
+                    # wandb: WARNING Symlinked 0 file into the W&B run directory, call wandb.save again to sync new files.
+        
+        wandb.save('model.h5')
 
 if __name__ == "__main__":
     run(get_options())
