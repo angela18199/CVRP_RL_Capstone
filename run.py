@@ -225,7 +225,8 @@ def run(opts):
             )
             train_run.append(avg_time)
             for hr in opts.save_hrs:
-                if (time() - start_time) > hr*3600:
+                #if (time() - start_time) > hr*3600:
+                if (time() - start_time) > hr:
                     opts.save_hrs.remove(hr)
                     print('Saving model and state...')
                     hr_time = int(round((time()-start_time)/3600))
@@ -247,16 +248,16 @@ def run(opts):
                     # save model and check points for wandb
                     wandb.save('*.pth')
 
-                    """
                     # Save a model file manually from the current directory:
                     wandb.save('{}_{}hr-model.h5'.format(run_name,hr_time))
 
+                    """
                     # Save all files that currently exist containing the substring "ckpt":
-                    wandb.save('logs/*ckpt*')
+                    wandb.save('logs/*ckpt*')"""
 
                     # Save any files starting with "checkpoint" as they're written to:
                     wandb.save(os.path.join(wandb.run.dir, "checkpoint*"))
-                    """
+                    
 
 if __name__ == "__main__":
     run(get_options())
