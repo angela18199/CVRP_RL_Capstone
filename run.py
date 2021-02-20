@@ -93,7 +93,8 @@ def run(opts):
     # sweep_id = wandb.sweep(sweep_config, project="Pytorch-sweeps")
 
     # Initialize a new wandb run
-    wandb.init(config=config_defaults, project = "hyper_attention")
+    run = wandb.init(config=config_defaults, project = "hyper_attention")
+    setup_pytorch_to_save_model_to_dir(run.dir)
     
     # Config is a variable that holds and saves hyperparameters and inputs
     config = wandb.config
@@ -263,7 +264,7 @@ def run(opts):
                     # wandb: WARNING Symlinked 0 file into the W&B run directory, call wandb.save again to sync new files.
                     """
         
-        wandb.save('model.h5')
+        #wandb.save('model.h5')
 
 if __name__ == "__main__":
     run(get_options())
