@@ -72,29 +72,11 @@ def run(opts):
         'lr_decay': opts.lr_decay,
     }
 
-    # determine the parameter space
-    """sweep_config = {
-        'parameters': {
-            'batch_size': {
-                'values': [256, 128, 64, 32]
-            },
-            'lr_model': {
-                'values': [1e-2, 1e-3, 1e-4, 3e-4, 3e-5, 1e-5]
-            },
-            'lr_critic': {
-                'values': [1e-2, 1e-3, 1e-4, 3e-4, 3e-5, 1e-5]
-            },
-            'lr_decay': {
-                'lr_decay': [0.9, 0.95, 1.0, 1.05, 1.1, 1.15]
-            },
-        }
-    }"""
     # initialize the sweep
     # sweep_id = wandb.sweep(sweep_config, project="Pytorch-sweeps")
 
     # Initialize a new wandb run
-    run = wandb.init(config=config_defaults, project = "hyper_attention")
-    setup_pytorch_to_save_model_to_dir(run.dir)
+    run = wandb.init(config=config_defaults, project = "hyper_attention", resume = True)
     
     # Config is a variable that holds and saves hyperparameters and inputs
     config = wandb.config
