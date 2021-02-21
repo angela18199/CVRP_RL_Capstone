@@ -77,7 +77,7 @@ def run(opts):
 
     # Initialize a new wandb run
     wandb_id = wandb.util.generate_id()
-    run = wandb.init(config=config_defaults, project = "hyper_attention", resume = True, id = wandb_id)
+    run = wandb.init(config=config_defaults, project = "hyper_attention", resume = "allow", id = wandb_id)
     
     # Config is a variable that holds and saves hyperparameters and inputs
     config = wandb.config
