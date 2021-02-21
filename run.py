@@ -76,7 +76,8 @@ def run(opts):
     # sweep_id = wandb.sweep(sweep_config, project="Pytorch-sweeps")
 
     # Initialize a new wandb run
-    run = wandb.init(config=config_defaults, project = "hyper_attention", resume = True)
+    wandb_id = wandb.util.generate_id()
+    run = wandb.init(config=config_defaults, project = "hyper_attention", resume = True, id = wandb_id)
     
     # Config is a variable that holds and saves hyperparameters and inputs
     config = wandb.config
