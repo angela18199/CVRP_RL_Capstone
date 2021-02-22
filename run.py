@@ -76,8 +76,11 @@ def run(opts):
     # sweep_id = wandb.sweep(sweep_config, project="Pytorch-sweeps")
 
     # Initialize a new wandb run
-    wandb_id = wandb.util.generate_id()
-    run = wandb.init(config=config_defaults, project = "hyper_attention", resume = "allow", id = wandb_id)
+    wandb.init(config=config_defaults, project = "hyper_attention", resume = True)
+    
+    # ???set same id for each run to resume model training
+    #wandb_id = wandb.util.generate_id()
+    #run = wandb.init(config=config_defaults, project = "hyper_attention", resume = "allow", id = wandb_id)
     
     # Config is a variable that holds and saves hyperparameters and inputs
     config = wandb.config
@@ -227,6 +230,12 @@ def run(opts):
                         os.path.join('models', '{}_{}hr-model-att-only.pt'.format(run_name,hr_time))
                         )
                     torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
+                    
+                    # setup_pytorch_to_save_model_to_dir
+                    torch.save(model, os.path.join(wandb.run.dir, '{}_{}hr-model.pt'.format(run_name,hr_time)))
+
+                    # "model.h5" is saved in wandb.run.dir & will be uploaded at the end of training
+                    model.save(os.path.join(wandb.run.dir, "model.h5"))
 
                     """
                     # ??? save model and check points for wandb
