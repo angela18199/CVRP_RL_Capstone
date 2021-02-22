@@ -212,7 +212,8 @@ def run(opts):
             )
             train_run.append(avg_time)
             for hr in opts.save_hrs:
-                if (time() - start_time) > hr*3600:
+                #if (time() - start_time) > hr*3600:
+                if (time() - start_time) > hr*36:
                     opts.save_hrs.remove(hr)
                     print('Saving model and state...')
                     hr_time = int(round((time()-start_time)/3600))
