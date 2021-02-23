@@ -116,6 +116,7 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
         # Save model to wandb
         torch.save(model.state_dict(), os.path.join(wandb.run.dir, 'model.pt'))
 
+    # ??? avg_reward: average distance log to W&B
     avg_reward = validate(model, val_dataset, opts)
 
     if not opts.no_tensorboard:

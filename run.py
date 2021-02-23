@@ -212,8 +212,7 @@ def run(opts):
             )
             train_run.append(avg_time)
             for hr in opts.save_hrs:
-                #if (time() - start_time) > hr*3600:
-                if (time() - start_time) > hr*36:
+                if (time() - start_time) > hr*3600:
                     opts.save_hrs.remove(hr)
                     print('Saving model and state...')
                     hr_time = int(round((time()-start_time)/3600))
@@ -232,13 +231,14 @@ def run(opts):
                         )
                     torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
                     
+                    """
                     # setup_pytorch_to_save_model_to_dir
                     torch.save(model, os.path.join(wandb.run.dir, '{}_{}hr-model.pt'.format(run_name,hr_time)))
 
                     # "model.h5" is saved in wandb.run.dir & will be uploaded at the end of training
                     model.save(os.path.join(wandb.run.dir, "model.h5"))
 
-                    """
+                    
                     # ??? save model and check points for wandb
                     # none of the following works....
                     wandb.save('*.pth')
