@@ -8,9 +8,7 @@ Apply Weights & Bias API to
 - monitor the training process of models with different hyperparameter.
 - conduct hyperparameter search and visualize the training process.
 
-To do:
-Resume training process during hyperparameter search to run a bigger size of problem.  
-
-Apply other policy gradient methods to the attention model.  
-
-The baseline model is based on this repository [here](https://github.com/wouterkool/attention-learn-to-route)
+To do:  
+- Resume training process during hyperparameter search to run a bigger size of problem.  
+- Apply other policy gradient methods to the attention model.  
+- The baseline model is based on this repository [here](https://github.com/wouterkool/attention-learn-to-route)
