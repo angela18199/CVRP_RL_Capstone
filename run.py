@@ -76,7 +76,8 @@ def run(opts):
     # sweep_id = wandb.sweep(sweep_config, project="Pytorch-sweeps")
 
     # Initialize a new wandb run
-    wandb.init(config=config_defaults, project = "hyper_attention", resume = True)
+    # wandb.init(config=config_defaults, project = "hyper_attention", resume = True)
+    wandb.init(config=config_defaults, project = "hyper_attention")
     
     # ???set same id for each run to resume model training
     #wandb_id = wandb.util.generate_id()
