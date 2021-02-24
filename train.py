@@ -84,8 +84,7 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
     loss, reinforce_loss = 0, 0
     for batch_id, batch in enumerate(tqdm(training_dataloader, disable=opts.no_progress_bar)):
 
-        loss, reinfore_loss = 
-        train_batch(
+        loss, reinfore_loss = train_batch(
             model,
             optimizer,
             baseline,
