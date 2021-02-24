@@ -29,7 +29,7 @@ def get_options(args=None):
     parser.add_argument('--normalization', default='batch', help="Normalization type, 'batch' (default) or 'instance'")
 
     # Training
-    parser.add_argument('--save_hrs', nargs='+', type=int, default=[1],
+    parser.add_argument('--save_hrs', nargs='+', type=int, default=[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25],
             help='Array of hours in which the curr model will be saved (int only)')
     parser.add_argument('--lr_model', type=float, default=1e-4, help="Set the learning rate for the actor network")
     parser.add_argument('--lr_critic', type=float, default=1e-4, help="Set the learning rate for the critic network")
