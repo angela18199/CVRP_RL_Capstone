@@ -215,7 +215,7 @@ def run(opts):
             for hr in opts.save_hrs:
                 if (time() - start_time) > hr*3600:
                     opts.save_hrs.remove(hr)
-                    print('Saving model and state...')
+                    print('Saving model and state...hourly model')
                     hr_time = int(round((time()-start_time)/3600))
                     # ??? get the average distance here and send it to W&B use this? wandb.log({"epoch": epoch, "loss": loss}, step=hr)
                     with open('models/hist_{}_{}hr.pickle'.format(run_name,hr_time), 'wb') as handle:
