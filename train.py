@@ -81,8 +81,10 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
     # Put model in train mode!
     model.train()
     set_decode_type(model, "sampling")
+    loss, reinforce_loss = 0, 0
     for batch_id, batch in enumerate(tqdm(training_dataloader, disable=opts.no_progress_bar)):
 
+        loss, reinfore_loss = 
         train_batch(
             model,
             optimizer,
@@ -116,8 +118,11 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
         # Save model to wandb
         torch.save(model.state_dict(), os.path.join(wandb.run.dir, 'model.pt'))
 
-    # ??? avg_reward: average distance log to W&B
     avg_reward = validate(model, val_dataset, opts)
+
+    # send log to W&B
+    metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss, 'loss':loss, 'avg distance': avg_reward}
+    wandb.log(metrics)
 
     if not opts.no_tensorboard:
         tb_logger.log_value('val_avg_reward', avg_reward, step)
@@ -167,8 +172,10 @@ def train_batch(
                    log_likelihood, reinforce_loss, bl_loss, tb_logger, opts)
 
     # Logging: save log for wandb
-    if batch_id == 0:
+    #if batch_id == 0:
         # ??? check if the value of loss would change after conduct backward()
         # ??? check how the x axis come from: use this? wandb.log({"epoch": epoch, "loss": loss}, step=epoch)
-        metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss, 'loss':loss}
-        wandb.log(metrics)
+        #metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss, 'loss':loss}
+        #wandb.log(metrics)
+    
+    return loss, reinforce_loss
