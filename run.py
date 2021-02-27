@@ -28,7 +28,7 @@ from torchvision import datasets, transforms
 
 def run(opts):
     # ??? set resume to true
-    opts.resume = True
+    opts.resume = 1
 
     # start time
     start_time = time()
