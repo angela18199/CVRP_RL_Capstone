@@ -27,6 +27,9 @@ import wandb
 from torchvision import datasets, transforms
 
 def run(opts):
+    # ??? set resume to true
+    opts.resume = True
+
     # start time
     start_time = time()
     train_run = []
