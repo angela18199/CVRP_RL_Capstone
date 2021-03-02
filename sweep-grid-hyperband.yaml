@@ -13,6 +13,4 @@ parameters:
   batch_size:
     values: [512, 256, 128, 64, 32]
   lr_model:
-    values: [1e-2, 1e-3, 1e-4, 1e-5]
-  lr_decay:
-    values: [0.94, 0.96, 0.98, 1.0]
+    values: [1e-4, 1e-3, 1e-5]

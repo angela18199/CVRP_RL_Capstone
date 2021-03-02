@@ -27,9 +27,6 @@ import wandb
 from torchvision import datasets, transforms
 
 def run(opts):
-    # ??? set resume to true
-    opts.resume = 1
-
     # start time
     start_time = time()
     train_run = []
@@ -76,15 +73,7 @@ def run(opts):
     }
 
     # initialize the sweep
-    # sweep_id = wandb.sweep(sweep_config, project="Pytorch-sweeps")
-
-    # Initialize a new wandb run
-    # wandb.init(config=config_defaults, project = "hyper_attention", resume = True)
     wandb.init(config=config_defaults, project = "hyper_attention")
-    
-    # ???set same id for each run to resume model training
-    #wandb_id = wandb.util.generate_id()
-    #run = wandb.init(config=config_defaults, project = "hyper_attention", resume = "allow", id = wandb_id)
     
     # Config is a variable that holds and saves hyperparameters and inputs
     config = wandb.config
@@ -234,34 +223,7 @@ def run(opts):
                         os.path.join('models', '{}_{}hr-model-att-only.pt'.format(run_name,hr_time))
                         )
                     torch.save(model, os.path.join('models', '{}_{}hr-model.pt'.format(run_name,hr_time)))
-                    
-                    """
-                    # setup_pytorch_to_save_model_to_dir
-                    torch.save(model, os.path.join(wandb.run.dir, '{}_{}hr-model.pt'.format(run_name,hr_time)))
 
-                    # "model.h5" is saved in wandb.run.dir & will be uploaded at the end of training
-                    model.save(os.path.join(wandb.run.dir, "model.h5"))
-
-                    
-                    # ??? save model and check points for wandb
-                    # none of the following works....
-                    wandb.save('*.pth')
-                    # wandb: WARNING Symlinked 0 file into the W&B run directory, call wandb.save again to sync new files.
-
-                    # Save a model file manually from the current directory:
-                    wandb.save('/models/{}_{}hr-model.h5'.format(run_name,hr_time), base_path="/models")
-                    #wandb: WARNING Saving files without folders. If you want to preserve sub directories pass base_path to wandb.save, i.e. wandb.save("/mnt/folder/file.h5", base_path="/mnt")
-
-                    
-                    # Save all files that currently exist containing the substring "ckpt":
-                    wandb.save('logs/*ckpt*')
-
-                    # Save any files starting with "checkpoint" as they're written to:
-                    wandb.save(os.path.join(wandb.run.dir, "checkpoint*"))
-                    # wandb: WARNING Symlinked 0 file into the W&B run directory, call wandb.save again to sync new files.
-                    """
-        
-        #wandb.save('model.h5')
 
 if __name__ == "__main__":
     run(get_options())

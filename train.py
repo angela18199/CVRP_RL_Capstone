@@ -169,12 +169,5 @@ def train_batch(
     if step % int(opts.log_step) == 0:
         log_values(cost, grad_norms, epoch, batch_id, step,
                    log_likelihood, reinforce_loss, bl_loss, tb_logger, opts)
-
-    # Logging: save log for wandb
-    #if batch_id == 0:
-        # ??? check if the value of loss would change after conduct backward()
-        # ??? check how the x axis come from: use this? wandb.log({"epoch": epoch, "loss": loss}, step=epoch)
-        #metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss, 'loss':loss}
-        #wandb.log(metrics)
     
     return loss, reinforce_loss
