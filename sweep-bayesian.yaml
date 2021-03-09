@@ -10,7 +10,7 @@ metric:
   goal: minimize
 parameters:
   batch_size:
-    distribution: constant
+    distribution: categorical
     values:
     - 1024
     - 512
