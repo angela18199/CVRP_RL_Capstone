@@ -120,7 +120,7 @@ def train_epoch(model, optimizer, baseline, lr_scheduler, epoch, val_dataset, pr
     avg_reward = validate(model, val_dataset, opts)
 
     # send log to W&B
-    metrics = {'epoch': epoch,'reinforce_loss': reinforce_loss, 'loss':loss, 'avg distance': avg_reward}
+    metrics = {'epoch': epoch, 'loss':loss, 'avg distance': avg_reward}
     wandb.log(metrics)
 
     if not opts.no_tensorboard:
