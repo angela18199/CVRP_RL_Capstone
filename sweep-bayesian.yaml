@@ -11,7 +11,10 @@ metric:
 parameters:
   batch_size:
     distribution: constant
-    values: [1024, 512, 256]
+    values:
+    - 1024
+    - 512
+    - 256
   lr_model:
     distribution: normal
     mu: 1e-4
