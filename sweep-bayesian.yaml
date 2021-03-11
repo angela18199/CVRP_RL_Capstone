@@ -16,9 +16,9 @@ parameters:
     - 512
     - 256
   lr_model:
-    distribution: normal
-    mu: 1e-4
-    sigma: 1e-4
+    distribution: uniform
+    min: 1e-4
+    max: 1e-3
   lr_decay:
     distribution: uniform
     min: 0.94
