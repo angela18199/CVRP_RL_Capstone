@@ -4,14 +4,16 @@ We will apply hyperparameter search and policy gradient methods to attention mod
 
 Task Done:
 
-Apply Weights & Bias API to 
+## Apply Weights & Bias API to 
 - monitor the training process of models with different hyperparameter.
 - conduct hyperparameter search and visualize the training process.  
 
 The model applied Weights & Bias API [here](https://github.com/angela18199/CVRP_RL_Capstone/tree/main/hyper_attention)
 
+
+
 To do:  
-Apply other policy gradient methods to the attention model.   
+## Apply other policy gradient methods to the attention model.   
 - merging garage with attention model.[here](https://github.com/angela18199/CVRP_RL_Capstone/tree/main/garage_attention)
 
 
