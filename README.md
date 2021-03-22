@@ -7,6 +7,7 @@ Task Done:
 Apply Weights & Bias API to 
 - monitor the training process of models with different hyperparameter.
 - conduct hyperparameter search and visualize the training process.  
+
 The model applied Weights & Bias API [here](https://github.com/angela18199/CVRP_RL_Capstone/tree/main/hyper_attention)
 
 To do:  
@@ -15,4 +16,4 @@ Apply other policy gradient methods to the attention model.
 
 
 
-* The baseline model is based on this repository [here](https://github.com/wouterkool/attention-learn-to-route)
+The baseline model is based on this repository [here](https://github.com/wouterkool/attention-learn-to-route)
