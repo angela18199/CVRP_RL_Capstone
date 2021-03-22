@@ -12,7 +12,9 @@ The model applied Weights & Bias API [here](https://github.com/angela18199/CVRP_
 
 
 ## Apply other policy gradient methods to the attention model(in progress).     
-- merging garage with attention model.[here](https://github.com/angela18199/CVRP_RL_Capstone/tree/main/garage_attention)
+- merging garage with attention model.  
+
+The files I am working on. [here](https://github.com/angela18199/CVRP_RL_Capstone/tree/main/garage_attention)
 
 
 
