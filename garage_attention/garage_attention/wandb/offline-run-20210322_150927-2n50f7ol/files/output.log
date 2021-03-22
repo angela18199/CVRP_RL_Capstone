@@ -1,0 +1,52 @@
+Evaluating baseline model on evaluation dataset
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:11,  1.24s/it] 20%|██        | 2/10 [00:02<00:09,  1.22s/it] 30%|███       | 3/10 [00:03<00:08,  1.25s/it] 40%|████      | 4/10 [00:04<00:07,  1.24s/it] 50%|█████     | 5/10 [00:06<00:06,  1.22s/it] 60%|██████    | 6/10 [00:07<00:04,  1.21s/it] 70%|███████   | 7/10 [00:08<00:03,  1.18s/it] 80%|████████  | 8/10 [00:09<00:02,  1.16s/it] 90%|█████████ | 9/10 [00:10<00:01,  1.14s/it]100%|██████████| 10/10 [00:11<00:00,  1.07s/it]
+Start train epoch 0, lr=0.0001 for run run_20210322T150926
+  0%|          | 0/2500 [00:00<?, ?it/s][W ParallelNative.cpp:206] Warning: Cannot set number of intraop threads after parallel work has started or after set_num_threads call when using native parallel backend (function set_num_threads)
+batch dict_keys(['loc', 'demand', 'depot'])
+batch dict_keys(['loc', 'demand', 'depot'])
+epoch: 0, train_batch_id: 0, avg_cost: 14.032479286193848
+grad_norm: 92.66744232177734, clipped: 1.0
+Finished epoch 0, took 00:00:44 s
+
+Saving model and state...
+Validating...
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:01<00:10,  1.17s/it]Traceback (most recent call last):
+  File "run.py", line 229, in <module>
+    run(get_options())
+  File "run.py", line 204, in run
+    start_time
+  File "/Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/train.py", line 123, in train_epoch
+    avg_reward = validate(model, val_dataset, opts)
+  File "/Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/train.py", line 23, in validate
+    cost = rollout(model, dataset, opts)
+  File "/Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/train.py", line 44, in rollout
+    in tqdm(DataLoader(dataset, batch_size=opts.eval_batch_size), disable=opts.no_progress_bar)
+  File "/Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/train.py", line 43, in <listcomp>
+    for bat
+  File "/Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/train.py", line 38, in eval_model_bat
+    cost, _ = model(move_to(bat, opts.device))
+  File "/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/nets/attention_model.py", line 136, in forward
+    embeddings, _ = self.embedder(self._init_embed(input))
+  File "/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/nets/graph_encoder.py", line 203, in forward
+    h = self.layers(h)
+  File "/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/anaconda3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 117, in forward
+    input = module(input)
+  File "/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/anaconda3/lib/python3.7/site-packages/torch/nn/modules/container.py", line 117, in forward
+    input = module(input)
+  File "/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/nets/graph_encoder.py", line 14, in forward
+    return input + self.module(input)
+  File "/anaconda3/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/nets/graph_encoder.py", line 109, in forward
+    self.W_out.view(-1, self.embed_dim)
+KeyboardInterrupt

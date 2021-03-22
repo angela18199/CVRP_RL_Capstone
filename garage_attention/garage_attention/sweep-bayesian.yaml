@@ -1,0 +1,25 @@
+program: run.py
+method: bayes
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+metric:
+  name: loss
+  goal: minimize
+parameters:
+  batch_size:
+    distribution: categorical
+    values:
+    - 1024
+    - 512
+    - 256
+  lr_model:
+    distribution: uniform
+    min: 1e-4
+    max: 1e-3
+  lr_decay:
+    distribution: uniform
+    min: 0.94
+    max: 1

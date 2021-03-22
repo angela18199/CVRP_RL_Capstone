@@ -1,0 +1,47 @@
+2021-03-22 14:28:54,171 INFO    MainThread:85214 [wandb_setup.py:_flush():70] setting env: {}
+2021-03-22 14:28:54,171 INFO    MainThread:85214 [wandb_setup.py:_flush():70] multiprocessing start_methods=fork,spawn,forkserver
+2021-03-22 14:28:54,171 INFO    MainThread:85214 [wandb_setup.py:_flush():70] setting login settings: {}
+2021-03-22 14:28:54,171 INFO    MainThread:85214 [wandb_setup.py:_flush():70] setting login settings: {'mode': 'offline'}
+2021-03-22 14:28:54,171 INFO    MainThread:85214 [wandb_init.py:_log_setup():303] Logging user logs to /Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/wandb/offline-run-20210322_142854-1793wcnk/logs/debug.log
+2021-03-22 14:28:54,171 INFO    MainThread:85214 [wandb_init.py:_log_setup():304] Logging internal logs to /Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/wandb/offline-run-20210322_142854-1793wcnk/logs/debug-internal.log
+2021-03-22 14:28:55,050 INFO    MainThread:85214 [wandb_run.py:_console_start():1237] atexit reg
+2021-03-22 14:28:55,051 INFO    MainThread:85214 [wandb_run.py:_redirect():1104] redirect: SettingsConsole.REDIRECT
+2021-03-22 14:28:55,051 INFO    MainThread:85214 [wandb_run.py:_redirect():1107] Redirecting console.
+2021-03-22 14:28:55,051 INFO    MainThread:85214 [redirect.py:install():204] install start
+2021-03-22 14:28:55,052 INFO    MainThread:85214 [redirect.py:install():219] install stop
+2021-03-22 14:28:55,052 INFO    MainThread:85214 [redirect.py:install():204] install start
+2021-03-22 14:28:55,053 INFO    MainThread:85214 [redirect.py:install():219] install stop
+2021-03-22 14:28:55,053 INFO    MainThread:85214 [wandb_run.py:_redirect():1151] Redirects installed.
+2021-03-22 14:29:07,263 INFO    MainThread:85214 [wandb_watch.py:watch():35] Watching
+2021-03-22 14:30:23,781 INFO    MainThread:85214 [wandb_run.py:_atexit_cleanup():1207] got exitcode: 255
+2021-03-22 14:30:23,783 INFO    MainThread:85214 [wandb_run.py:_restore():1179] restore
+2021-03-22 14:30:23,783 INFO    MainThread:85214 [redirect.py:uninstall():223] uninstall start
+2021-03-22 14:30:23,783 INFO    MainThread:85214 [redirect.py:_stop():278] _stop: stdout
+2021-03-22 14:30:23,784 INFO    stdout    :85214 [redirect.py:_pipe_relay():120] relay done saw last write: stdout
+2021-03-22 14:30:23,784 INFO    stdout    :85214 [redirect.py:_pipe_relay():136] relay done done: stdout
+2021-03-22 14:30:23,784 INFO    MainThread:85214 [redirect.py:_stop():284] _stop closed: stdout
+2021-03-22 14:30:23,784 INFO    MainThread:85214 [redirect.py:_stop():290] _stop joined: stdout
+2021-03-22 14:30:23,784 INFO    MainThread:85214 [redirect.py:_stop():292] _stop rd closed: stdout
+2021-03-22 14:30:23,784 INFO    MainThread:85214 [redirect.py:uninstall():227] uninstall done
+2021-03-22 14:30:23,784 INFO    MainThread:85214 [redirect.py:uninstall():223] uninstall start
+2021-03-22 14:30:23,784 INFO    MainThread:85214 [redirect.py:_stop():278] _stop: stderr
+2021-03-22 14:30:23,784 INFO    MainThread:85214 [redirect.py:_stop():284] _stop closed: stderr
+2021-03-22 14:30:23,784 INFO    stderr    :85214 [redirect.py:_pipe_relay():120] relay done saw last write: stderr
+2021-03-22 14:30:23,784 INFO    stderr    :85214 [redirect.py:_pipe_relay():136] relay done done: stderr
+2021-03-22 14:30:23,784 INFO    MainThread:85214 [redirect.py:_stop():290] _stop joined: stderr
+2021-03-22 14:30:23,785 INFO    MainThread:85214 [redirect.py:_stop():292] _stop rd closed: stderr
+2021-03-22 14:30:23,785 INFO    MainThread:85214 [redirect.py:uninstall():227] uninstall done
+2021-03-22 14:30:23,797 INFO    MainThread:85214 [wandb_run.py:_wait_for_finish():1324] got exit ret: uuid: "683dd6f355694fa88354975d658c2c53"
+
+2021-03-22 14:30:25,807 INFO    MainThread:85214 [wandb_run.py:_wait_for_finish():1324] got exit ret: uuid: "f821315f4e1b4e1da538ac2b1c54b600"
+response {
+  poll_exit_response {
+    done: true
+    exit_result {
+    }
+  }
+}
+
+2021-03-22 14:30:27,054 INFO    MainThread:85214 [wandb_run.py:_show_summary():1469] rendering summary
+2021-03-22 14:30:27,054 INFO    MainThread:85214 [wandb_run.py:_show_history():1507] rendering history
+2021-03-22 14:30:27,055 INFO    MainThread:85214 [internal.py:handle_exit():138] Internal process exited

@@ -1,0 +1,16 @@
+program: run.py
+#train.py
+method: grid
+command:
+  - ${env}
+  - python3
+  - ${program}
+  - ${args}
+metric:
+  name: loss
+  goal: minimize
+parameters:
+  batch_size:
+    values: [512, 256, 128, 64, 32]
+  lr_model:
+    values: [1e-4, 1e-3, 1e-5]

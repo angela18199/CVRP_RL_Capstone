@@ -1,0 +1,75 @@
+2021-03-22 14:28:54,954 INFO    MainThread:85223 [internal.py:wandb_internal():63] W&B internal server running at pid: 85223
+2021-03-22 14:28:54,956 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: run_start
+2021-03-22 14:28:54,956 INFO    WriterThread:85223 [datastore.py:open_for_write():76] open: /Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/wandb/offline-run-20210322_142854-1793wcnk/run-1793wcnk.wandb
+2021-03-22 14:28:54,959 DEBUG   HandlerThread:85223 [git.py:repo():30] git repository is invalid
+2021-03-22 14:30:23,565 WARNING MainThread:85223 [internal.py:wandb_internal():117] Internal process interrupt: 1
+2021-03-22 14:30:23,789 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: poll_exit
+2021-03-22 14:30:23,791 DEBUG   SenderThread:85223 [sender.py:send():90] send: exit
+2021-03-22 14:30:23,791 INFO    SenderThread:85223 [sender.py:send_exit():168] handling exit code: 255
+2021-03-22 14:30:23,792 INFO    SenderThread:85223 [sender.py:send_exit():176] send defer
+2021-03-22 14:30:23,794 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,794 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: poll_exit
+2021-03-22 14:30:23,796 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: defer
+2021-03-22 14:30:23,797 INFO    HandlerThread:85223 [handler.py:handle_request_defer():69] handle defer: 0
+2021-03-22 14:30:23,797 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,797 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: defer
+2021-03-22 14:30:23,797 INFO    SenderThread:85223 [sender.py:send_request_defer():185] handle sender defer: 0
+2021-03-22 14:30:23,798 INFO    SenderThread:85223 [sender.py:send_request_defer():221] send defer: 1
+2021-03-22 14:30:23,798 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: defer
+2021-03-22 14:30:23,798 INFO    HandlerThread:85223 [handler.py:handle_request_defer():69] handle defer: 1
+2021-03-22 14:30:23,880 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,881 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: defer
+2021-03-22 14:30:23,881 INFO    SenderThread:85223 [sender.py:send_request_defer():185] handle sender defer: 1
+2021-03-22 14:30:23,881 INFO    SenderThread:85223 [sender.py:send_request_defer():221] send defer: 2
+2021-03-22 14:30:23,882 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: defer
+2021-03-22 14:30:23,882 INFO    HandlerThread:85223 [handler.py:handle_request_defer():69] handle defer: 2
+2021-03-22 14:30:23,884 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,884 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: defer
+2021-03-22 14:30:23,884 INFO    SenderThread:85223 [sender.py:send_request_defer():185] handle sender defer: 2
+2021-03-22 14:30:23,884 INFO    SenderThread:85223 [sender.py:send_request_defer():221] send defer: 3
+2021-03-22 14:30:23,885 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: defer
+2021-03-22 14:30:23,885 INFO    HandlerThread:85223 [handler.py:handle_request_defer():69] handle defer: 3
+2021-03-22 14:30:23,885 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,886 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: defer
+2021-03-22 14:30:23,886 INFO    SenderThread:85223 [sender.py:send_request_defer():185] handle sender defer: 3
+2021-03-22 14:30:23,886 INFO    SenderThread:85223 [sender.py:send_request_defer():221] send defer: 4
+2021-03-22 14:30:23,886 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: defer
+2021-03-22 14:30:23,886 INFO    HandlerThread:85223 [handler.py:handle_request_defer():69] handle defer: 4
+2021-03-22 14:30:23,887 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,887 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: defer
+2021-03-22 14:30:23,887 INFO    SenderThread:85223 [sender.py:send_request_defer():185] handle sender defer: 4
+2021-03-22 14:30:23,887 INFO    SenderThread:85223 [sender.py:send_request_defer():221] send defer: 5
+2021-03-22 14:30:23,888 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: defer
+2021-03-22 14:30:23,888 INFO    HandlerThread:85223 [handler.py:handle_request_defer():69] handle defer: 5
+2021-03-22 14:30:23,888 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,888 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: defer
+2021-03-22 14:30:23,888 INFO    SenderThread:85223 [sender.py:send_request_defer():185] handle sender defer: 5
+2021-03-22 14:30:23,888 INFO    SenderThread:85223 [sender.py:send_request_defer():221] send defer: 6
+2021-03-22 14:30:23,889 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: defer
+2021-03-22 14:30:23,889 INFO    HandlerThread:85223 [handler.py:handle_request_defer():69] handle defer: 6
+2021-03-22 14:30:23,889 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,889 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: defer
+2021-03-22 14:30:23,889 INFO    SenderThread:85223 [sender.py:send_request_defer():185] handle sender defer: 6
+2021-03-22 14:30:23,889 INFO    SenderThread:85223 [sender.py:send_request_defer():221] send defer: 7
+2021-03-22 14:30:23,890 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: defer
+2021-03-22 14:30:23,890 INFO    HandlerThread:85223 [handler.py:handle_request_defer():69] handle defer: 7
+2021-03-22 14:30:23,890 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,890 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: defer
+2021-03-22 14:30:23,890 INFO    SenderThread:85223 [sender.py:send_request_defer():185] handle sender defer: 7
+2021-03-22 14:30:23,891 INFO    SenderThread:85223 [sender.py:send_request_defer():221] send defer: 8
+2021-03-22 14:30:23,891 DEBUG   SenderThread:85223 [sender.py:send():90] send: final
+2021-03-22 14:30:23,892 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: defer
+2021-03-22 14:30:23,892 INFO    HandlerThread:85223 [handler.py:handle_request_defer():69] handle defer: 8
+2021-03-22 14:30:23,893 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:23,893 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: defer
+2021-03-22 14:30:23,893 INFO    SenderThread:85223 [sender.py:send_request_defer():185] handle sender defer: 8
+2021-03-22 14:30:25,803 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: poll_exit
+2021-03-22 14:30:25,804 DEBUG   SenderThread:85223 [sender.py:send():90] send: request
+2021-03-22 14:30:25,804 DEBUG   SenderThread:85223 [sender.py:send_request():99] send_request: poll_exit
+2021-03-22 14:30:25,808 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: get_summary
+2021-03-22 14:30:25,810 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: sampled_history
+2021-03-22 14:30:25,812 DEBUG   HandlerThread:85223 [handler.py:handle_request():55] handle_request: shutdown
+2021-03-22 14:30:25,813 INFO    HandlerThread:85223 [handler.py:finish():271] shutting down handler
+2021-03-22 14:30:25,894 INFO    WriterThread:85223 [datastore.py:close():257] close: /Users/yu/Documents/Duke/courses/capstone/RL_for_vehicle/repository_modified/garage_attention/garage_attention/wandb/offline-run-20210322_142854-1793wcnk/run-1793wcnk.wandb
+2021-03-22 14:30:26,810 INFO    SenderThread:85223 [sender.py:finish():642] shutting down sender
+2021-03-22 14:30:26,822 INFO    MainThread:85223 [internal.py:handle_exit():138] Internal process exited
